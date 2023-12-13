@@ -1,7 +1,7 @@
 import pygame
 from blobwars.constants import *
 from blobwars.game import Game
-from minimax.algorithms import *
+from minimax.alphaBeta import *
 
 FPS = 60
 
