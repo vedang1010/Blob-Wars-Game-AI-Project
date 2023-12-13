@@ -2,7 +2,7 @@ import pygame
 from blobwars.constants import *
 from blobwars.game import Game
 from algorithm.alphaBeta import *
-
+import time
 FPS = 60
 
 WIN = pygame.display.set_mode((WIDTH, HEIGHT + SQUARE_SIZE + MARGIN))
@@ -32,6 +32,7 @@ def main():
 
         if game.turn == 2 and game.state == 'Running':
             best_move = min_func(game.board, 0, -64)[1]
+            # time.sleep(5)
             game.ai_move(best_move)
             
 
