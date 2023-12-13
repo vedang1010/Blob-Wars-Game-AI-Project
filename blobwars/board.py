@@ -1,14 +1,14 @@
 import pygame
 from copy import deepcopy
-from .blob import Blob
-from .constants import COLORS, COLS, HEIGHT, ROWS, SQUARE_SIZE, MARGIN, WIDTH
+from .blob import *
+from .constants import *
 
 class Board:
     def __init__(self) -> None:
         self.board = []
         self.blob_nums = {'1': 0, '2': 0}
         self.reset()
-    
+
     def reset(self):
         self.board = [[None for col in range(COLS)] for row in range(ROWS)]
         self.board[0][0] = Blob(0, 0, 2)
@@ -87,7 +87,7 @@ class Board:
         pygame.draw.circle(win, outline_color, (MARGIN+ SQUARE_SIZE//2,HEIGHT + SQUARE_SIZE//2), SQUARE_SIZE//2 -8)
         pygame.draw.circle(win, color, (MARGIN+ SQUARE_SIZE//2,HEIGHT + SQUARE_SIZE//2), SQUARE_SIZE//2 -10)
         outline_color = pygame.Color('darkmagenta')
-        color =  COLORS['purble']
+        color =  COLORS['purple']
         pygame.draw.circle(win, outline_color, (WIDTH - SQUARE_SIZE*2 + SQUARE_SIZE//2 - MARGIN*2,HEIGHT + SQUARE_SIZE//2), SQUARE_SIZE//2 -8)
         pygame.draw.circle(win, color, (WIDTH - SQUARE_SIZE*2 + SQUARE_SIZE//2 - MARGIN*2,HEIGHT + SQUARE_SIZE//2), SQUARE_SIZE//2 -10)
         win.blit(player1_number_text,(MARGIN+ SQUARE_SIZE,HEIGHT +MARGIN ))

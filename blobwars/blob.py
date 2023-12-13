@@ -1,12 +1,12 @@
 import pygame
-from .constants import MARGIN, SQUARE_SIZE, COLORS
+from .constants import *
 
 class Blob:
     def __init__(self, row, col, player):
         self.row = row
         self.col = col
         self.player = player
-        self.color = COLORS['blue'] if player == 1 else COLORS['purble']
+        self.color = COLORS['blue'] if player == 1 else COLORS['purple']
         self.x = 0
         self.y = 0
         self.get_position()
