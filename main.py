@@ -1,7 +1,7 @@
 import pygame
 from blobwars.constants import *
 from blobwars.game import Game
-from minimax.alphaBeta import *
+from algorithm.alphaBeta import *
 
 FPS = 60
 
@@ -9,7 +9,8 @@ WIN = pygame.display.set_mode((WIDTH, HEIGHT + SQUARE_SIZE + MARGIN))
 pygame.display.set_caption('BLOB WARS')
 Icon = pygame.image.load('blobwars/blob_wars.jpg')
 pygame.display.set_icon(Icon)
-
+# user=1
+# ai=2
 def get_row_col_from_mouse(pos):
     x, y = pos
     col = x // (SQUARE_SIZE + MARGIN)

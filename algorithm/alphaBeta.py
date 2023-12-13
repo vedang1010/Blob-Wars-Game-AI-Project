@@ -9,6 +9,7 @@ def min_func(state: Board, depth, alpha):
     min_val = COLS * ROWS
     beta = COLS * ROWS
 
+
     for child in state.get_all_children(2):
         value = max_func(child, depth+1, beta)[0]
         # min_val = min(min_val, value)
