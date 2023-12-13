@@ -1,5 +1,5 @@
 import pygame
-from blobwars.constants import MARGIN, SQUARE_SIZE, WIDTH, HEIGHT
+from blobwars.constants import *
 from blobwars.game import Game
 from minimax.algorithms import *
 
