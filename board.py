@@ -1,7 +1,7 @@
 import pygame
 from copy import deepcopy
-from .blob import *
-from .constants import *
+from blob import *
+from constants import *
 
 class Board:
     def __init__(self) -> None:

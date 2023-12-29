@@ -1,8 +1,8 @@
 import pygame
 
-from blobwars.constants import COLORS, FONT, HEIGHT, MARGIN, SQUARE_SIZE, WIDTH
+from constants import COLORS, FONT, HEIGHT, MARGIN, SQUARE_SIZE, WIDTH
 
-from .board import Board
+from board import Board
 
 class Game:
     def __init__(self, win):
@@ -93,4 +93,5 @@ class Game:
 
     def ai_move(self, board):
         self.board = board
-        self.change_turn()
+        
+        # self.change_turn()

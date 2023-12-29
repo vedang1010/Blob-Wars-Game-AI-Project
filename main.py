@@ -1,13 +1,13 @@
 import pygame
-from blobwars.constants import *
-from blobwars.game import Game
-from algorithm.alphaBeta import *
+from constants import *
+from game import Game
+from alphaBeta import *
 import time
 FPS = 60
 
 WIN = pygame.display.set_mode((WIDTH, HEIGHT + SQUARE_SIZE + MARGIN))
 pygame.display.set_caption('BLOB WARS')
-Icon = pygame.image.load('blobwars/blob_wars.jpg')
+Icon = pygame.image.load('blob_wars.jpg')
 pygame.display.set_icon(Icon)
 # user=1
 # ai=2
@@ -34,16 +34,20 @@ def main():
             best_move = min_func(game.board, 0, -64)[1]
             # time.sleep(5)
             game.ai_move(best_move)
-            
-
+            # best_move = min_func(game.board, 0, -64)[1]
+            # game.ai_move(best_move)
+            game.change_turn()
+        
+        
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-
+        
             if event.type == pygame.MOUSEBUTTONDOWN and game.state == 'Running':
                 pos = pygame.mouse.get_pos()
                 row, col = get_row_col_from_mouse(pos)
                 game.select(row, col)
+                
             
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
@@ -53,6 +57,10 @@ def main():
                     game.reset()
 
                 elif event.key == pygame.K_p:
+                    
+                    game.pass_turn(1)
+
+                    
                     game.pass_turn(1)
         if game.state != 'GAME OVER' and game.state != 'YOU WIN':
             game.check_game_state()

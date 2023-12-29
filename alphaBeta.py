@@ -1,5 +1,5 @@
-from blobwars.board import Board
-from blobwars.constants import COLS, DEPTH, ROWS
+from board import Board
+from constants import COLS, DEPTH, ROWS
 
 def min_func(state: Board, depth, alpha):
     if depth >= DEPTH:
